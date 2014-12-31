@@ -1,0 +1,5 @@
+- name: TDD
+  brief: "A workshop about TDD"
+
+- name: "UICollectionView"
+  biref: "A workshop about UICollectionView"

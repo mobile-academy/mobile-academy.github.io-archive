@@ -10,5 +10,8 @@ url: "http://mobile-academy.github.io" # the base hostname & protocol for your s
 twitter_username: mobacademy
 github_username:  mobile-academy
 
+sass:
+    sass_dir: _sass
+
 # Build settings
 markdown: kramdown
