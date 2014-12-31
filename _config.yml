@@ -16,8 +16,12 @@ sass:
 # Collections
 
 collections:
+  base_descriptions:
+    output: true
+    output_ext: html
   upcoming:
     output: true
+    output_ext: html
   past:
     output: true
 
