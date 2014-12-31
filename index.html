@@ -11,17 +11,15 @@ layout: default
   <div class="home-section">
     <h1 class="page-heading">Upcoming workshops</h1>
     <div class="container-fluid">
-      {% for upcoming_workshop in site.upcoming %}
-      {% capture modulo %}{{ forloop.index0 | mod:2 }}{% endcapture %}
+      {% for upcoming_workshop in (site.upcoming | sort: 'date') %}
+      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
       {% if modulo == '0' or forloop.first %}
         <div class="row">
         {% endif %}
         <div class="col-md-6">
-          {% assign  workshop_type = (site.data.workshop_types | where:"type", upcoming_workshop.type) %}
+          {% assign  workshop_type = ((site.data.workshop_types | where:"type", upcoming_workshop.type) | first) %}
 
-          {{ workshop_type.brief }}
           {{ workshop_type.title }}
-
           </br>
           {{ upcoming_workshop.location }}
         </div>
@@ -36,20 +34,21 @@ layout: default
   <div class="home-section">
     <h1 class="page-heading">Previous workshops</h1>
     <div class="container-fluid">
-      {% for page in site.past %}
-      {% capture modulo %}{{ forloop.index0 | mod:2 }}{% endcapture %}
+      {% assign  past_workshops = (site.past | sort: 'date') %}
+      {{ past_workshops  }}
+
+      {% for past_workshop in past_workshops reversed %}
+      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
       {% if modulo == '0' or forloop.first %}
         <div class="row">
         {% endif %}
         <div class="col-md-6">
-          {% for workshop_model in site.data.workshop_types%}
-            {% if workshop_model.type ==  upcoming_workshop.type %}
-              {% assign workshop_type = workshop_model %}
-            {% endif %}
-          {% endfor %}
+          {% assign  workshop_type = ((site.data.workshop_types | where:"type", past_workshop.type) | first) %}
           {{ workshop_type.title }}
           </br>
-          {{ upcoming_workshop.location }}
+          {{ past_workshop.location }}
+        </br>
+        {{ past_workshop.date | date_to_long_string }}
         </div>
         {% if modulo == '1' or forloop.last %}
           </div> <!-- /Row -->
@@ -63,9 +62,9 @@ layout: default
     <h1 class="page-heading">What people think</h1>
   </div> -->
   <!-- /People -->
-  <!-- Speakers -->
+  <!-- Team -->
   <div class="home-section">
-    <h1 class="page-heading">Speakers</h1>
+    <h1 class="page-heading">Team</h1>
     <div class="container-fluid">
       <div class="row">
         {% for member in site.data.members %}
@@ -77,5 +76,5 @@ layout: default
     </div>
   </div>
 </div>
-<!--  /Speakers -->
+<!--  /Team -->
 </div>
