@@ -1,5 +1,6 @@
-- name: TDD
+- type: uicollectionview
+  brief: "A workshop about UICollectionView"
+  title: UICollectionView Workshop
+- type: tdd
   brief: "A workshop about TDD"
-
-- name: "UICollectionView"
-  biref: "A workshop about UICollectionView"
+  title: TDD Workshop

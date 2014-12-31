@@ -2,18 +2,80 @@
 layout: default
 ---
 <div class="home">
-  <h1 class="page-heading">Speakers</h1>
-  <!-- Speakers -->
-  <div class="container">
-    <div class="row">
-      {% for member in site.data.members %}
+  <!-- Mission -->
+  <div class="home-section">
+    <h1 class="page-heading">Mission</h1>
+  </div>
+  <!-- /Mission -->
+  <!-- Upcoming -->
+  <div class="home-section">
+    <h1 class="page-heading">Upcoming workshops</h1>
+    <div class="container-fluid">
+      {% for upcoming_workshop in site.upcoming %}
+      {% capture modulo %}{{ forloop.index0 | mod:2 }}{% endcapture %}
+      {% if modulo == '0' or forloop.first %}
+        <div class="row">
+        {% endif %}
         <div class="col-md-6">
-          {{ member.name }}
+          {% assign  workshop_type = (site.data.workshop_types | where:"type", upcoming_workshop.type) %}
+
+          {{ workshop_type.brief }}
+          {{ workshop_type.title }}
+
+          </br>
+          {{ upcoming_workshop.location }}
         </div>
+        {% if modulo == '1' or forloop.last %}
+          </div> <!-- /Row -->
+        {% endif %}
       {% endfor %}
-    </ul>
+    </div>
+  </div>
+  <!-- /Upcoming -->
+  <!-- Previous -->
+  <div class="home-section">
+    <h1 class="page-heading">Previous workshops</h1>
+    <div class="container-fluid">
+      {% for page in site.past %}
+      {% capture modulo %}{{ forloop.index0 | mod:2 }}{% endcapture %}
+      {% if modulo == '0' or forloop.first %}
+        <div class="row">
+        {% endif %}
+        <div class="col-md-6">
+          {% for workshop_model in site.data.workshop_types%}
+            {% if workshop_model.type ==  upcoming_workshop.type %}
+              {% assign workshop_type = workshop_model %}
+            {% endif %}
+          {% endfor %}
+          {{ workshop_type.title }}
+          </br>
+          {{ upcoming_workshop.location }}
+        </div>
+        {% if modulo == '1' or forloop.last %}
+          </div> <!-- /Row -->
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+  <!-- /Previous -->
+  <!-- People -->
+  <!--   <div class="home-section">
+    <h1 class="page-heading">What people think</h1>
+  </div> -->
+  <!-- /People -->
+  <!-- Speakers -->
+  <div class="home-section">
+    <h1 class="page-heading">Speakers</h1>
+    <div class="container-fluid">
+      <div class="row">
+        {% for member in site.data.members %}
+          <div class="col-md-6">
+            {{ member.name }}
+          </div>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
 </div>
-<h1 class="page-heading">Upcoming workshops workshops</h1>
-<h1 class="page-heading">Previous workshops</h1>
+<!--  /Speakers -->
 </div>
