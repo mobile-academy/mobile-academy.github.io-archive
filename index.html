@@ -11,70 +11,75 @@ layout: default
   <div class="home-section">
     <h1 class="page-heading">Upcoming workshops</h1>
     <div class="container-fluid">
-      {% for upcoming_workshop in (site.upcoming | sort: 'date') %}
-      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-      {% if modulo == '0' or forloop.first %}
-        <div class="row">
-        {% endif %}
-        <div class="col-md-6">
-          {% assign  workshop_type = ((site.data.workshop_types | where:"type", upcoming_workshop.type) | first) %}
-
-          {{ workshop_type.title }}
-          </br>
-          {{ upcoming_workshop.location }}
-        </div>
-        {% if modulo == '1' or forloop.last %}
-          </div> <!-- /Row -->
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-  <!-- /Upcoming -->
-  <!-- Previous -->
-  <div class="home-section">
-    <h1 class="page-heading">Previous workshops</h1>
-    <div class="container-fluid">
-      {% assign  past_workshops = (site.past | sort: 'date') %}
-      {{ past_workshops  }}
-
-      {% for past_workshop in past_workshops reversed %}
-      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-      {% if modulo == '0' or forloop.first %}
-        <div class="row">
-        {% endif %}
-        <div class="col-md-6">
-          {% assign  workshop_type = ((site.data.workshop_types | where:"type", past_workshop.type) | first) %}
-          {{ workshop_type.title }}
-          </br>
-          {{ past_workshop.location }}
-        </br>
-        {{ past_workshop.date | date_to_long_string }}
-        </div>
-        {% if modulo == '1' or forloop.last %}
-          </div> <!-- /Row -->
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-  <!-- /Previous -->
-  <!-- People -->
-  <!--   <div class="home-section">
-    <h1 class="page-heading">What people think</h1>
-  </div> -->
-  <!-- /People -->
-  <!-- Team -->
-  <div class="home-section">
-    <h1 class="page-heading">Team</h1>
-    <div class="container-fluid">
-      <div class="row">
-        {% for member in site.data.members %}
+      {% assign  upcoming_workshops = (site.upcoming | sort: 'date') %}
+      {% for upcoming_workshop in upcoming_workshops %}
+        {% if modulo == '0' or forloop.first %}
+          <div class="row">
+          {% endif %}
           <div class="col-md-6">
-            {{ member.name }}
+            {% assign  workshop_type = ((site.data.workshop_types | where:"type", upcoming_workshop.type) | first) %}
+            {{ workshop_type.title }}
+            </br>
+            {{ upcoming_workshop.location }}
+            {% if upcoming_workshop.date %}
+              </br>
+              {{ upcoming_workshop.date | date_to_long_string }}
+            {% endif %}
+            </br>
+            <a class="post-link" href="{{ upcoming_workshop.url | prepend: site.baseurl }}">More info >></a>
           </div>
+          {% if modulo == '1' or forloop.last %}
+            </div> <!-- /Row -->
+          {% endif %}
         {% endfor %}
-      </ul>
+      </div>
+    </div>
+    <!-- /Upcoming -->
+    <!-- Previous -->
+    <div class="home-section">
+      <h1 class="page-heading">Previous workshops</h1>
+      <div class="container-fluid">
+        {% assign  past_workshops = (site.past | sort: 'date') %}
+        {% for past_workshop in past_workshops reversed %}
+        {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+        {% if modulo == '0' or forloop.first %}
+          <div class="row">
+          {% endif %}
+          <div class="col-md-6">
+            {% assign  workshop_type = ((site.data.workshop_types | where:"type", past_workshop.type) | first) %}
+            {{ workshop_type.title }}
+            </br>
+            {{ past_workshop.location }}
+            </br>
+            {{ past_workshop.date | date_to_long_string }}
+            </br>
+            <a class="post-link" href="{{ past_workshop.url | prepend: site.baseurl }}">More info >></a>
+          </div>
+          {% if modulo == '1' or forloop.last %}
+            </div> <!-- /Row -->
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <!-- /Previous -->
+    <!-- People -->
+    <!--   <div class="home-section">
+      <h1 class="page-heading">What people think</h1>
+    </div> -->
+    <!-- /People -->
+    <!-- Team -->
+    <div class="home-section">
+      <h1 class="page-heading">Team</h1>
+      <div class="container-fluid">
+        <div class="row">
+          {% for member in site.data.members %}
+            <div class="col-md-6">
+              {{ member.name }}
+            </div>
+          {% endfor %}
+        </ul>
+      </div>
     </div>
   </div>
-</div>
-<!--  /Team -->
+  <!--  /Team -->
 </div>
