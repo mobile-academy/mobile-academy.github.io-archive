@@ -5,7 +5,7 @@
 
 - name: Aleksander Zubala
   twitter: alekzubala
-  github:
+  github: azubala
   image: resources/team/zubala.jpg
 
 - name: Maciej Oczko
@@ -15,6 +15,7 @@
 
 - name: Łukasz Warchoł
   twitter: warcholuke
+  github: lukewar
   image: resources/team/warchol.jpg
 
 - name: Robert Wijas
