@@ -1,12 +1,14 @@
 - name: Paweł Dudek
   github: paweldudek
   twitter: eldudi
+  image: resources/team/dudek.png
 
 - name: Maciej Oczko
-  github: parkr
+  github: literator
 
 - name: Łukasz Warchoł
   github: liufengyun
+
 
 - name: Robert Wijas
   github: robertwijas

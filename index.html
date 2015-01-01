@@ -71,15 +71,30 @@ layout: default
     <div class="home-section">
       <h1 class="page-heading">Team</h1>
       <div class="container-fluid">
-        <div class="row">
-          {% for member in site.data.team %}
-            <div class="col-md-6">
-              {{ member.name }}
+        {% for member in site.data.team %}
+        {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+        {% if modulo == '0' or forloop.first %}
+          <div class="row">
+          {% endif %}
+          <div class="col-md-6">
+            <div class="round">
+              <img src="{{ member.image  | prepend: site.baseurl }}">
             </div>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
+            <h4>{{ member.name }}</h4>
+            <a href="https://www.github.com/{{ member.github }}">
+              <i class="fa fa-github fa-lg"></i>
+            </a>
+            <a href="https://www.twitter.com/{{ member.twitter }}">
+              <i class="fa fa-twitter fa-lg"></i>
+            </a>
+
+          </div>
+          {% if modulo == '1' or forloop.last %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </ul>
   </div>
-  <!--  /Team -->
+</div>
+<!--  /Team -->
 </div>
