@@ -72,9 +72,9 @@ layout: default
           <div class="row">
           {% endif %}
           <div class="col-md-6 team_person">
-            <div class="text-center">
+            <div class="team_member_card">
               <img class="img-circle" src="{{ member.image  | prepend: site.baseurl }}">
-              {{ member.name }}
+              <div class="team_member_name">{{ member.name }}</div>
               <a href="https://www.github.com/{{ member.github }}">
                 <i class="fa fa-github fa-2x"></i>
               </a>

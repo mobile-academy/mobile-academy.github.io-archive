@@ -36,6 +36,27 @@ ul, ol, dl, figure,
 }
 
 /**
+* Team members
+*/
+
+.team_member_name {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.team_member_card {
+    @extend .text-center;
+
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+    > img {
+        max-width: 250px;
+        max-height: 250px;
+    }
+}
+
+/**
  * Images
  */
 img {
@@ -61,8 +82,6 @@ figure > img {
 figcaption {
     font-size: $small-font-size;
 }
-
-
 
 /**
  * Lists
