@@ -1,17 +1,19 @@
 - name: Paweł Dudek
   github: paweldudek
   twitter: eldudi
-  image: resources/team/dudek.png
+  image: resources/team/dudek.jpg
+
+- name: Aleksander Zubala
+  image: resources/team/zubala.jpg
 
 - name: Maciej Oczko
   github: literator
 
 - name: Łukasz Warchoł
-  github: liufengyun
+  image: resources/team/warchol.jpg
 
 
 - name: Robert Wijas
   github: robertwijas
   twitter: robertwijas
 
-- name: Aleksander Zubala

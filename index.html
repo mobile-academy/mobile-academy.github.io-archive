@@ -3,12 +3,12 @@ layout: default
 ---
 <div class="home">
   <!-- Mission -->
-  <div class="home-section">
+  <div class="home-section light-background">
     <h1 class="page-heading">Mission</h1>
   </div>
   <!-- /Mission -->
   <!-- Upcoming -->
-  <div class="home-section">
+  <div class="home-section dark-background">
     <h1 class="page-heading">Upcoming workshops</h1>
     <div class="container-fluid">
       {% assign  upcoming_workshops = (site.upcoming | sort: 'date') %}
@@ -36,8 +36,8 @@ layout: default
     </div>
     <!-- /Upcoming -->
     <!-- Previous -->
-    <div class="home-section">
-      <h1 class="page-heading">Previous workshops</h1>
+    <div class="home-section light-background">
+      <h3>Previous workshops</h1>
       <div class="container-fluid">
         {% assign  past_workshops = (site.past | sort: 'date') %}
         {% for past_workshop in past_workshops reversed %}
@@ -62,32 +62,26 @@ layout: default
       </div>
     </div>
     <!-- /Previous -->
-    <!-- People -->
-    <!--   <div class="home-section">
-      <h1 class="page-heading">What people think</h1>
-    </div> -->
-    <!-- /People -->
     <!-- Team -->
-    <div class="home-section">
-      <h1 class="page-heading">Team</h1>
+    <div class="home-section dark-background">
+      <h1 class="page-heading">Our amazing team</h1>
       <div class="container-fluid">
         {% for member in site.data.team %}
         {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
         {% if modulo == '0' or forloop.first %}
           <div class="row">
           {% endif %}
-          <div class="col-md-6">
-            <div class="round">
-              <img src="{{ member.image  | prepend: site.baseurl }}">
+          <div class="col-md-6 team_person">
+            <div class="text-center">
+              <img class="img-circle" src="{{ member.image  | prepend: site.baseurl }}">
+              {{ member.name }}
+              <a href="https://www.github.com/{{ member.github }}">
+                <i class="fa fa-github fa-2x"></i>
+              </a>
+              <a href="https://www.twitter.com/{{ member.twitter }}">
+                <i class="fa fa-twitter fa-2x"></i>
+              </a>
             </div>
-            <h4>{{ member.name }}</h4>
-            <a href="https://www.github.com/{{ member.github }}">
-              <i class="fa fa-github fa-lg"></i>
-            </a>
-            <a href="https://www.twitter.com/{{ member.twitter }}">
-              <i class="fa fa-twitter fa-lg"></i>
-            </a>
-
           </div>
           {% if modulo == '1' or forloop.last %}
           </div>
