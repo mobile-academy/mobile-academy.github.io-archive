@@ -7,4 +7,7 @@ date: 2014-08-26 10:00:00
 
 layout: workshop
 
+images:
+  - resources/uicollectionview_warsaw/1.jpg
+
 ---

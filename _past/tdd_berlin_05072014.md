@@ -7,4 +7,7 @@ date: 2014-07-05 10:00:00
 
 layout: workshop
 
+images:
+  - resources/tdd_berlin/1.jpg
+
 ---
