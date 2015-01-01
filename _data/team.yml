@@ -4,12 +4,17 @@
   image: resources/team/dudek.jpg
 
 - name: Aleksander Zubala
+  twitter: alekzubala
+  github:
   image: resources/team/zubala.jpg
 
 - name: Maciej Oczko
   github: literator
+  twitter: MaciejOczko
+  image: resources/team/oczko.jpg
 
 - name: Łukasz Warchoł
+  twitter: warcholuke
   image: resources/team/warchol.jpg
 
 - name: Robert Wijas

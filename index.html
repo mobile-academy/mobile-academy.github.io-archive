@@ -4,12 +4,12 @@ layout: default
 <div class="home">
   <!-- Mission -->
   <div class="home-section light-background">
-    <h1 class="page-heading">Mission</h1>
+    <h1 class="section-heading">Mission</h1>
   </div>
   <!-- /Mission -->
   <!-- Upcoming -->
   <div class="home-section dark-background">
-    <h1 class="page-heading">Upcoming workshops</h1>
+    <h1 class="section-heading">Upcoming workshops</h1>
     <div class="container-fluid">
       {% assign  upcoming_workshops = (site.upcoming | sort: 'date') %}
       {% for upcoming_workshop in upcoming_workshops %}
@@ -37,7 +37,7 @@ layout: default
     <!-- /Upcoming -->
     <!-- Previous -->
     <div class="home-section light-background">
-      <h3>Previous workshops</h1>
+      <h1 class="section-heading">Past workshops</h1>
       <div class="container-fluid">
         {% assign  past_workshops = (site.past | sort: 'date') %}
         {% for past_workshop in past_workshops reversed %}
@@ -64,7 +64,7 @@ layout: default
     <!-- /Previous -->
     <!-- Team -->
     <div class="home-section dark-background">
-      <h1 class="page-heading">Our amazing team</h1>
+      <h1 class="section-heading">The Team</h1>
       <div class="container-fluid">
         {% for member in site.data.team %}
         {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
