@@ -7,6 +7,8 @@ date: 2014-03-15 10:00:00
 
 layout: workshop
 
+thumbnail_path: resources/tdd_warsaw/1-mini.jpg
+
 images:
   - resources/tdd_warsaw/1.png
   - resources/tdd_warsaw/2.jpg

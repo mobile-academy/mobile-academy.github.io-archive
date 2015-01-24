@@ -7,6 +7,9 @@ date: 2014-11-29 10:00:00
 
 layout: workshop
 
+thumbnail_path: resources/uicollectionview_krakow/1-mini.jpg
+
+
 images:
   - resources/uicollectionview_krakow/1.jpg
   - resources/uicollectionview_krakow/2.jpg

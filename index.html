@@ -64,7 +64,7 @@ layout: default
                 <div class="feature">
                   <a class="post-link" href="{{ past_workshop.url | prepend: site.baseurl }}"></a>
                   {% assign workshop_type = ((site.data.workshop_types | where:"type", past_workshop.type) | first) %}
-                  {% assign image_url = (past_workshop.images | first) %}
+                  {% assign image_url = (past_workshop.thumbnail_path) %}
                   <img src="{{ image_url | prepend: site.baseurl }}">
                   <div>
                     <div class="title">

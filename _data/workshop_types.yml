@@ -7,8 +7,3 @@
   brief: "A workshop about TDD"
   title: TDD Workshop
   default_image: resources/default_images/uicollectionview.jpg
-
-  agenda:
-    - speaker: Pawel Dudek
-      subject: Introduction to TDD
-    - speaker: Lukasz Warchol
