@@ -6,10 +6,9 @@
 
         {% for navigation_item in include.param %}
 
-        <a class="navbar-brand" href="#{{ navigation_item }}">{{ navigation_item }}</a>
+        <a class="navbar-brand" href="{{ navigation_item['link'] }}">{{ navigation_item['title'] }}</a>
 
         {% endfor %}
-
 
       </div>
       </div><!-- /.container-fluid -->
