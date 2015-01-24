@@ -1,10 +1,12 @@
 - type: uicollectionview
   brief: "A workshop about UICollectionView"
   title: UICollectionView Workshop
+  default_image: resources/default_images/tdd.jpg
 
 - type: tdd
   brief: "A workshop about TDD"
   title: TDD Workshop
+  default_image: resources/default_images/uicollectionview.jpg
 
   agenda:
     - speaker: Pawel Dudek
