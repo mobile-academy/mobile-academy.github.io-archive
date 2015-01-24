@@ -31,9 +31,9 @@ layout: default
                     <div class="description">
                       {{ upcoming_workshop.location }},
                       {% if upcoming_workshop.date != null %}
-                      {{ upcoming_workshop.date | date_to_long_string  }}
+                        {{ upcoming_workshop.date | date_to_long_string  }}
                       {% else %}
-                      date to be announced
+                        date to be announced
                       {% endif %}
                     </div>
                   </div>
@@ -98,13 +98,17 @@ layout: default
             <div class="col-md-6 team_person">
               <div class="team_member_card">
                 <img class="img-circle" src="{{ member.image  | prepend: site.baseurl }}">
-                <div class="team_member_name">{{ member.name }}</div>
-                <a href="https://www.github.com/{{ member.github }}">
-                  <i class="fa fa-github fa-2x"></i>
-                </a>
-                <a href="https://www.twitter.com/{{ member.twitter }}">
-                  <i class="fa fa-twitter fa-2x"></i>
-                </a>
+                <div class="name">
+                  {{ member.name }}
+                </div>
+                <div class="contact">
+                  <a href="https://www.github.com/{{ member.github }}">
+                    <i class="fa fa-github fa-2x"></i>
+                  </a>
+                  <a href="https://www.twitter.com/{{ member.twitter }}">
+                    <i class="fa fa-twitter fa-2x"></i>
+                  </a>
+                </div>
               </div>
             </div>
             {% if modulo == '1' or forloop.last %}

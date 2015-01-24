@@ -31,16 +31,14 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
+
+.navbar-brand {
+    padding-left: 0px;
+}
+
 /**
 * Team members
 */
-
-.team_member_name {
-    margin-top: 20px;
-
-    font-size: 20px;
-    font-weight: 500;
-}
 
 .team_member_card {
     @extend .text-center;
@@ -52,6 +50,18 @@ ul, ol, dl, figure,
         max-height: 250px;
 
         border: 5px solid #ffffff;
+    }
+
+    .name {
+        margin-top: 20px;
+
+        font-size: $title-font-size;
+        font-weight:  200;
+    }
+    .contact {
+        a, a:visited, a:hover, a:active {
+            color: DarkGray;
+        }
     }
 }
 
