@@ -6,30 +6,15 @@
     margin-bottom: 20px
 }
 
-.navigation-padding {
-    min-height: $navigation-height
-}
-
 /**
  * Site footer
  */
 .site-footer {
-    padding-bottom: 22px;
-}
+    padding-top: $spacing-unit;
+    padding-bottom: $spacing-unit;
+    line-height: 28px;
 
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
-}
-
-/**
- * Page content
- */
-.page-content {
-    padding: $spacing-unit 0;
-}
-
-.page-heading {
-    font-size: 20px;
+    .right {
+      text-align: right;
+    }
 }

@@ -31,6 +31,14 @@ ul, ol, dl, figure,
     margin-bottom: $spacing-unit / 2;
 }
 
+/**
+* Navbar fix
+*/
+
+.navbar {
+    background-color: transparent;
+    border: 0px;
+}
 
 .navbar-brand {
     padding-left: 0px;
@@ -96,14 +104,27 @@ ul, ol, dl, figure,
 * Generic
 */
 
-.section-heading {
+.page-heading {
+    font-size: $title-font-size * 4;
     @extend .text-center;
-    margin-bottom: 60px;
+}
+
+.page-subheading {
+    @extend .text-center;
+    margin-bottom: 20px;
+    font-size: $title-font-size * 2;
 }
 
 .home-section {
     padding-top: 60px;
     padding-bottom: 60px;
+
+    min-height: 100vh;
+
+    .centered{
+        margin-top: 18vh;
+        margin-bottom: 18vh;
+    }
 }
 
 .home-section-inner {
@@ -160,6 +181,11 @@ img {
     background-color: #f6f6f6;
 }
 
+.hero-background {
+    color: white;
+    background-image:  url("/resources/background.jpg");
+}
+
 /**
  * Figures
  */
@@ -169,20 +195,6 @@ figure > img {
 
 figcaption {
     font-size: $small-font-size;
-}
-
-/**
- * Lists
- */
-ul, ol {
-    // margin-left: $spacing-unit;
-}
-
-li {
-    > ul,
-    > ol {
-         margin-bottom: 0;
-    }
 }
 
 /**

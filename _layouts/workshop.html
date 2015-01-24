@@ -13,8 +13,10 @@ layout: default
     {% if modulo == '0' or forloop.first %}
       <div class="row">
       {% endif %}
-      <div class=".col-md-6">
-        <img src="{{site.baseurl}}/{{image}}">
+      <div class="col-md-6">
+        <a href="{{site.baseurl}}/{{image}}" class="thumbnail">
+          <img src="{{site.baseurl}}/{{image}}">
+        </a>
       </div>
       {% if modulo == '1' or forloop.last %}
         </div> <!-- /Row -->
