@@ -55,12 +55,14 @@ layout: default
                   {% assign workshop_type = ((site.data.workshop_types | where:"type", past_workshop.type) | first) %}
                   {% assign image_url = (past_workshop.images | first) %}
                   <img src="{{ image_url | prepend: site.baseurl }}">
-                  {{ workshop_type.title }}
-                  </br>
-                  {{ past_workshop.location }}
-                  </br>
-                  {{ past_workshop.date | date_to_long_string }}
-                  </br>
+                  <div>
+                    <div class="title">
+                      {{ workshop_type.title }}
+                    </div>
+                    <div class="description">
+                      {{ past_workshop.location }}, {{ past_workshop.date | date_to_long_string }}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -81,20 +83,20 @@ layout: default
           {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
           {% if modulo == '0' or forloop.first %}
             <div class="row">
-          {% endif %}
-          <div class="col-md-6 team_person">
-            <div class="team_member_card">
-              <img class="img-circle" src="{{ member.image  | prepend: site.baseurl }}">
-              <div class="team_member_name">{{ member.name }}</div>
-              <a href="https://www.github.com/{{ member.github }}">
-                <i class="fa fa-github fa-2x"></i>
-              </a>
-              <a href="https://www.twitter.com/{{ member.twitter }}">
-                <i class="fa fa-twitter fa-2x"></i>
-              </a>
+            {% endif %}
+            <div class="col-md-6 team_person">
+              <div class="team_member_card">
+                <img class="img-circle" src="{{ member.image  | prepend: site.baseurl }}">
+                <div class="team_member_name">{{ member.name }}</div>
+                <a href="https://www.github.com/{{ member.github }}">
+                  <i class="fa fa-github fa-2x"></i>
+                </a>
+                <a href="https://www.twitter.com/{{ member.twitter }}">
+                  <i class="fa fa-twitter fa-2x"></i>
+                </a>
+              </div>
             </div>
-          </div>
-          {% if modulo == '1' or forloop.last %}
+            {% if modulo == '1' or forloop.last %}
             </div>
           {% endif %}
         {% endfor %}

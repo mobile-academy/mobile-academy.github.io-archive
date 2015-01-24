@@ -16,10 +16,6 @@ dl, dd, ol, ul, figure {
  * Basic styling
  */
 body {
-    font-family: $base-font-family;
-    font-size: $base-font-size;
-    line-height: $base-line-height;
-    font-weight: 300;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
@@ -68,6 +64,22 @@ ul, ol, dl, figure,
     background-color: #f6f6f6;
     min-height: 350px;
     padding: 5px;
+
+    .title {
+        margin-top: 20px;
+        margin-bottom: 2px;
+        @extend .text-center;
+        font-size: $title-font-size;
+        font-weight:  200;
+    }
+
+    .description {
+        @extend .text-center;
+        margin-bottom: 15px;
+        font-weight:  180;
+        font-style: italic;
+        color: DarkGrey;
+    }
 }
 
 /**
