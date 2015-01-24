@@ -115,6 +115,11 @@ ul, ol, dl, figure,
     font-size: $title-font-size * 2;
 }
 
+.section-heading {
+    @extend .text-center;
+    margin-bottom: 60px;
+}
+
 .home-section {
     padding-top: 60px;
     padding-bottom: 60px;
