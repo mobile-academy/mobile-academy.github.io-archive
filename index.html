@@ -29,9 +29,11 @@ layout: default
                       {{ workshop_type.title }}
                     </div>
                     <div class="description">
-                      {{ upcoming_workshop.location }}
+                      {{ upcoming_workshop.location }},
                       {% if upcoming_workshop.date != null %}
-                      , {{ upcoming_workshop.date | date_to_long_string  }}
+                      {{ upcoming_workshop.date | date_to_long_string  }}
+                      {% else %}
+                      date to be announced
                       {% endif %}
                     </div>
                   </div>
