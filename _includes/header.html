@@ -4,11 +4,19 @@
       <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
 
+        {% if include.param  %}
+
         {% for navigation_item in include.param %}
 
         <a class="navbar-brand" href="{{ navigation_item['link'] }}">{{ navigation_item['title'] }}</a>
 
         {% endfor %}
+
+        {% else %}
+
+        <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+
+        {% endif %}
 
       </div>
       </div><!-- /.container-fluid -->

@@ -1,29 +1,33 @@
 ---
 layout: default
 ---
-{% assign workshop_type = ((site.data.workshop_types | where:"type", page.type) | first) %}
-{% assign workshop_description_page = ((site.base_descriptions | where:"type", page.type) | first) %}
-<div class="width-wrapper">
-  <header class="post-header">
-    <h2 class="post-title">{{ page.title }}</h1>
-  </header>
-  <div class="images">
-    {% for image in page.images %}
-    {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
-    {% if modulo == '0' or forloop.first %}
-      <div class="row">
-      {% endif %}
-      <div class="col-md-6">
-        <a href="{{site.baseurl}}/{{image}}" class="thumbnail">
-          <img src="{{site.baseurl}}/{{image}}">
-        </a>
-      </div>
-      {% if modulo == '1' or forloop.last %}
-        </div> <!-- /Row -->
-      {% endif %}
-    {% endfor %}
+<div class="navbar-spacing">
+</div>
+<div class="workshop-details-container">
+  {% assign workshop_type = ((site.data.workshop_types | where:"type", page.type) | first) %}
+  {% assign workshop_description_page = ((site.base_descriptions | where:"type", page.type) | first) %}
+  <div class="width-wrapper">
+    <header class="post-header">
+      <h2 class="post-title">{{ page.title }}</h1>
+    </header>
+    <div class="images">
+      {% for image in page.images %}
+      {% capture modulo %}{{ forloop.index0 | modulo:2 }}{% endcapture %}
+      {% if modulo == '0' or forloop.first %}
+        <div class="row">
+        {% endif %}
+        <div class="col-md-6">
+          <a href="{{site.baseurl}}/{{image}}" class="thumbnail">
+            <img src="{{site.baseurl}}/{{image}}">
+          </a>
+        </div>
+        {% if modulo == '1' or forloop.last %}
+          </div> <!-- /Row -->
+        {% endif %}
+      {% endfor %}
+    </div>
+    <article class="post-content">
+      {{ workshop_description_page.content }}
+    </article>
   </div>
-  <article class="post-content">
-    {{ workshop_description_page.content }}
-  </article>
 </div>
