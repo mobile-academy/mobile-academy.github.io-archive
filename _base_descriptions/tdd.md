@@ -10,11 +10,11 @@ The workshop will consist of 8 hours of hand-to-hand coding mixed with lectures 
 
 ### Covered topics:
 
-1. Introduction to tests and testing framework: You'll learn what are tests, what's the structure of a typical test and how they work. Yo'll see how TDD works and what are its benefits. And finally you'll learn about available tools when it comes to TDD in ObjC and you'll write your very own first test!
+1. Introduction to tests and testing framework: You'll learn what are tests, what's the structure of a typical test and how they work. You'll see how TDD works and what are its benefits. And finally you'll learn about available tools when it comes to TDD in ObjC and you'll write your very own first test!
 
-2. Extract for Red Green Refactor: Short and sweet session about the most fundamental technique used in TDD. After quick introduction the technique is going to be illustrated with a real life example, live on stage. In addition, you will get chance to practice it with an assistance of experienced iOS team.
+2. Testing techniques: During series of exercises you will learn about different types of tests and how to use them. You will practice using double objects like mocks, stubs and fakes. All of that while writing your first test driven feature in real application.
 
-3. Testing techniques: During series of exercises you will learn about different types of tests and how to use them. You will practice using double objects like mocks, stubs and fakes. All of that while writing your first test driven feature in real application.
+3. Extract for Red Green Refactor: Short and sweet session about the most fundamental technique used in TDD. After quick introduction the technique is going to be illustrated with a real life example, live on stage. In addition, you will get chance to practice it with an assistance of experienced iOS team.
 
 4. How to work with legacy code effectively: You'll learn how to identify internal and external dependencies and you'll learn how to apply that knowledge to write test your legacy code and then refactor it.
 
